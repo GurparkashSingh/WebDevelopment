@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>My First Vue Js App</title>
+        <meta charset = "UTF-8">
+    </head>
+
+    <body>
+        <div id="app">
+            {{ message }}
+            {{ see }}
+            {{ test }}
+            {{ price }}
+            {{ details }}
+        </div>
+
+        <script src="https://unpkg.com/vue"></script>
+
+        <script type="text/javascript">
+            // Javascript code comes here
+            //const app = new Vue().$mount('#app'); // creating a new instance of the vue and mounting it on the id app
+        
+            const app = new Vue({
+                el: '#app',
+
+                data: {
+                    message: "Hello!",
+                    see: "Jurassic",
+                    test: 32,
+                    price: 18 + 6,
+                    details: ['world', 'madara', 'albus']
+                }
+            });
+        
+        </script>
+    </body>
+
+</html>
