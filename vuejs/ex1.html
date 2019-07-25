@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Working with the Computed Objects</title>
+        <meta charset = "UTF-8">
+    </head>
+
+    <body>
+        <div id="app">
+            {{ cost }}
+        </div>
+
+        <script src="https://www.unpkg.com/vue"></script>
+
+        <script type="text/javascript">
+            const app = new Vue({
+                el: '#app',
+
+                data: {
+                    price: 25,
+                    currency: '$',
+                    salesTax: 16
+                },
+
+                computed: {
+                    cost() {
+                        let itemCost = parseFloat(Math.round((this.salesTax / 100) * this.price) + this.price).toFixed(2);
+
+                        let output = 'This item costs ' + this.currency + itemCost;
+
+                        output += ' (' + this.currency + this.price + ' excluding salesTax' + ')';
+
+                        return output;
+                    }
+                } 
+            });
+        </script>
+
+    </body>
+
+</html>

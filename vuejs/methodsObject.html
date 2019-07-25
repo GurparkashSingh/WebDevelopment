@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Working with the Methods Objects</title>
+        <meta charset = "UTF-8">
+    </head>
+
+    <body>
+        <div id="app">
+            {{ addCurrency(calculateSalesTax(shirtPrice)) }}
+
+            <br>
+
+            {{ addCurrency(calculateSalesTax(hatPrice)) }}
+        </div>
+
+        <script src="https://www.unpkg.com/vue"></script>
+
+        <script type="text/javascript">
+            const app = new Vue({
+                el: '#app',
+
+                data: {
+                    shirtPrice: 25,
+                    hatPrice: 10,
+                    currency: '$',
+                    salesTax: 16
+                },
+
+                methods: {
+                    calculateSalesTax(price) {
+                        return parseFloat(Math.round((this.salesTax / 100) * price) + price).toFixed(2);
+                    },
+
+                    addCurrency(price) {
+                        return this.currency + price;
+                    }
+                }
+            });
+                
+        </script>
+
+    </body>
+
+</html>

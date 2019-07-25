@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Working with the Computed Objects</title>
+        <meta charset = "UTF-8">
+    </head>
+
+    <body>
+        <div id="app">
+            <h2>Message: </h2>
+            {{ message }}
+
+            <br/>
+            <br/>
+
+            <h2>Computed: </h2>
+            {{ messageToLower }}
+        </div>
+
+        <script src="https://www.unpkg.com/vue"></script>
+
+        <script type="text/javascript">
+            const app = new Vue({
+                el: '#app',
+
+                data: {
+                    message: "HelLO Vue!"
+                },
+
+                computed: {
+                    messageToLower() {
+                        return 'hello vue!';
+                    }
+                }
+            });
+        </script>
+
+    </body>
+
+</html>
